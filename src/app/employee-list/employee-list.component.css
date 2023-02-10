@@ -5,3 +5,6 @@
     margin-bottom: 20px;
     text-align: center;
 }
+thead th{
+    background-color: blueviolet;
+}
