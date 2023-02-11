@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { Employee } from '../employee';
 import { EmployeeService } from '../employee.service';
 @Component({
@@ -13,10 +15,34 @@ export class EmployeeListComponent {
 //  }
 
 
-  constructor(private employeeService: EmployeeService){
+  constructor(private employeeService: EmployeeService,private router: Router){
     this.employeeService.getEmployeeList().subscribe((data:Employee[])=>{
       this.employees=data;
     });
+
+
+  
+  }
+
+
+
+  private getEmployees(){
+    this.employeeService.getEmployeeList().subscribe((data:Employee[])=>{
+      this.employees=data;
+    });
+  }
+
+
+
+  updateEmployee(id:number){
+      this.router.navigate(['update-employee',id]);
+  }
+
+
+  deleteEmployee(id:number){
+    this.employeeService.deleteEmployee(id).subscribe(data=>{
+      this.getEmployees();
+    })
   }
 
 

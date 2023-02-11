@@ -21,14 +21,12 @@ export class CreateEmployeeComponent {
   saveEmployee(){
     this.employeeService.createEmployee(this.employee).subscribe(data=>{
       console.log(data);
-      this.gotoEmployeeList();
+      
     })
   }
 
 
-  gotoEmployeeList(){
-      this.router.navigate(['/employees'])
-  }
+  
 
   onSubmit(){
     console.log(this.employee);

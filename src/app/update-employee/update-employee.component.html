@@ -1,17 +1,17 @@
 
-<h2>Create Employees</h2>
+<h2>Update Employees</h2>
 
 
-<form class="needs-validation" novalidate>
+
 <form (ngSubmit)="onSubmit()">
 
     <div class="form-group">
-        <label for="validationTooltip01">First Name</label>
+        <label>First Name</label>
 
-        <input placeholder="name"  type="text" class="form-control" id="validationTooltip01"    
+        <input placeholder="name"  type="text" class="form-control" id="firstName"     
 
 
-        [(ngModel)] = "employee.firstName" name = "firstName" required>
+        [(ngModel)] = "employee.firstName" name = "firstName">
 
         <label>Last Name</label>
 
@@ -29,12 +29,3 @@
 
 
 </form>
-</form>
-
-
-
-
-
-
-
-
